@@ -1,0 +1,42 @@
+export type Region = 'East Asia' | 'Southeast Asia' | 'South Asia' | 'Central Asia' | 'West Asia' | 'North Asia';
+export type TravelEvent = {
+  id: string;
+  country: string;
+  title: string;
+  start: string;
+  end: string;
+  type: 'festival' | 'holiday' | 'season';
+  major: boolean;
+  status: 'annual' | 'projected' | 'confirmed' | 'seasonal';
+  location: string;
+  description: string;
+  impact: string;
+  source: string;
+  sourceLabel: string;
+  checked: string;
+};
+export type Country = {
+  code: string;
+  name: string;
+  region: Region;
+  tagline: string;
+  currency: string;
+  language: string;
+  food: string;
+  transport: string;
+  season: string;
+  bestMonths: number[];
+  cities: string[];
+  cost: 'Lower' | 'Moderate' | 'Higher';
+  solo: string;
+  source: string;
+  area?: boolean;
+  visa: { label: string; summary: string; url: string; checked?: string };
+};
+export type Notebook = {
+  version: 1;
+  countries: string[];
+  events: string[];
+  visited: string[];
+  notes: Record<string, string>;
+};
